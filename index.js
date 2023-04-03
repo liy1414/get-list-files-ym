@@ -7,11 +7,11 @@ const YEMOT_PASSWORD = '123456';
  * @return {String} - The token
  */
 async function getToken() {
-    const response = await axios.post('Login', {
+    const token = (await axios.post('Login', {
         username: YEMOT_NUMBER,
         password: YEMOT_PASSWORD,
-    });
-    return response.data.token;
+    })).data.token;
+    return token;
 }
 
 /**
